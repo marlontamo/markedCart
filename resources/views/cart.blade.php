@@ -11,7 +11,7 @@
                             {{ session()->get('success') }}
                         </div>
                     @endif
-
+                      
                     <div class="card border shadow-0">
                         <div class="m-4">
                             <div class="mb-3">
@@ -29,7 +29,7 @@
                                                 class="border rounded me-3" style="width: 96px; height: 96px" />
                                             <div class="">
                                                 <a href="#" class="nav-link">{{ $item->name }}</a>
-                                                <p class="text-muted">$ {{ $item->price }}.00</p>
+                                                <p class="text-muted">$ {{\Number::currency($item->price,'usd')}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -38,7 +38,7 @@
                                     class="col-lg-2 col-sm-6 col-6 d-flex flex-row flex-lg-column flex-xl-row text-nowrap">
                                     <td>
                                         <div class="input-group bootstrap-touchspin">
-                                            <span class="input-group-btn"><a
+                                            <span class="input-group-btn btn btn-dark btn-xs"><a
                                                     href="{{ route('decrease.quantity',$item->id) }}"
                                                     class="btn btn-default bootstrap-touchspin-down"
                                                     type="button">-</a></span><span
@@ -46,8 +46,8 @@
                                                 style="display: none"></span>
                                             <input type="text" name="" value="{{ $item->quantity }}"
                                                 class="form-control mx-1 px-3" />
-                                            <span class="input-group-addon bootstrap-touchspin-postfix"
-                                                style="display: none"></span><span class="input-group-btn">
+                                            <span class=" input-group-addon bootstrap-touchspin-postfix"
+                                                style="display: none"></span><span class="input-group-btn btn btn-dark btn-xs">
                                                 <a href="{{ route('add.quantity',$item->id) }}"
                                                     class="btn btn-default bootstrap-touchspin-up"
                                                     type="button">+</a></span>
@@ -55,7 +55,8 @@
                                     </td>
                                     <div class="">
                                         <p class="h6">
-                                            ${{ $item->quantity * $item->price }}.00
+                                       {{ \Number::currency($item->quantity * $item->price,'usd')}} 
+                                              
                                         </p>
                                     </div>
                                 </div>
@@ -115,7 +116,7 @@
                             <hr />
                             <div class="d-flex justify-content-between">
                                 <p class="mb-2">Total price:</p>
-                                <p class="mb-2 fw-bold">${{ $total }}.00</p>
+                                <p class="mb-2 fw-bold">{{\Number::currency($total,'usd') }}</p>
                             </div>
 
                             <div class="mt-3">
