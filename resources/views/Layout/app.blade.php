@@ -25,7 +25,11 @@
                         <a class="nav-link active" aria-current="page" href="{{ route('shop')}}">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('cart') }}">Cart</a>
+
+                        <?php 
+                        $items = \Cart::getContent();
+                        ?>
+                        <a class="nav-link" href="{{ route('cart') }}">Cart({{ count($items) }})</a>
                     </li>
 
             </div>

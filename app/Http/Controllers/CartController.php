@@ -10,7 +10,7 @@ class CartController extends Controller
     {   
         $total = \Cart::getTotal();
         $items = \Cart::getContent();
-        return view('cart',compact('items','total'));
+        return view('cart.cart',compact('items','total'));
     }
 
     public function addCart($productId)
@@ -63,6 +63,6 @@ class CartController extends Controller
     }
     public function checkout(){
 
-        return view('checkout');
+        return view('cart.checkout');
     }
 }

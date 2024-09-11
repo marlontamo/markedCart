@@ -9,7 +9,7 @@ Route::get('/checkout',[CartController::class,'checkout'])->name('cart.checkout'
 Route::get('/', function () {
     $items = \Cart::getContent();
     $products = Product::all();
-    return view('welcome',compact('products','items'));
+    return view('cart.welcome',compact('products','items'));
 })->name('shop');
 
 Route::get('cart',[CartController::class,'cart'])->name('cart');

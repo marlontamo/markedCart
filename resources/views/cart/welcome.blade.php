@@ -11,7 +11,7 @@
                         alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ $product->name }}</h5>
-                        <p>{{ $product->price }}</p>
+                        <p>{{ \Number::currency($product->price,'usd') }}</p>
 
                         <a href="{{ route('add.cart',$product->id) }}" class="btn btn-primary">Add cart</a>
                     </div>
