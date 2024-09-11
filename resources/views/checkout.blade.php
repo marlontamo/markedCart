@@ -59,6 +59,9 @@
                 <select class="custom-select d-block w-100" id="country" required>
                   <option value="">Choose...</option>
                   <option>United States</option>
+                  <option>UAE</option>
+                  <option>Singapore</option>
+                  <option>Philippines</option>
                 </select>
                 <div class="invalid-feedback">
                   Please select a valid country.
@@ -69,6 +72,9 @@
                 <select class="custom-select d-block w-100" id="state" required>
                   <option value="">Choose...</option>
                   <option>California</option>
+                  <option>Dubai</option>
+                  <option>Sembawang</option>
+                  <option>Benguet</option>
                 </select>
                 <div class="invalid-feedback">
                   Please provide a valid state.
