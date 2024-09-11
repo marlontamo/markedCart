@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class CartController extends Controller
 {
     public function cart()
-    {
+    {   
         $total = \Cart::getTotal();
         $items = \Cart::getContent();
         return view('cart',compact('items','total'));
@@ -60,5 +60,9 @@ class CartController extends Controller
     {
         \Cart::clear();
         return back()->with('success','There is no item in your cart');
+    }
+    public function checkout(){
+
+        return view('checkout');
     }
 }

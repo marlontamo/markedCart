@@ -5,7 +5,7 @@ use App\Models\Product;
 use App\Http\Controllers\CartController;
 
 
-
+Route::get('/checkout',[CartController::class,'checkout'])->name('cart.checkout');
 Route::get('/', function () {
     $items = \Cart::getContent();
     $products = Product::all();
