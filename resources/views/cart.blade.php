@@ -29,7 +29,7 @@
                                                 class="border rounded me-3" style="width: 96px; height: 96px" />
                                             <div class="">
                                                 <a href="#" class="nav-link">{{ $item->name }}</a>
-                                                <p class="text-muted">{{ $item->price }}</p>
+                                                <p class="text-muted">$ {{ $item->price }}.00</p>
                                             </div>
                                         </div>
                                     </div>
@@ -55,7 +55,7 @@
                                     </td>
                                     <div class="">
                                         <p class="h6">
-                                            {{ $item->quantity * $item->price }}
+                                            ${{ $item->quantity * $item->price }}.00
                                         </p>
                                     </div>
                                 </div>
@@ -115,7 +115,7 @@
                             <hr />
                             <div class="d-flex justify-content-between">
                                 <p class="mb-2">Total price:</p>
-                                <p class="mb-2 fw-bold">{{ $total }}</p>
+                                <p class="mb-2 fw-bold">${{ $total }}.00</p>
                             </div>
 
                             <div class="mt-3">
